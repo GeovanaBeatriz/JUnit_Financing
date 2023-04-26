@@ -57,7 +57,7 @@ public class FinancingTests {
 	
 	@Test
 	public void setIncomeShouldUpdateDataWhenValidateData() {
-		double newIncome = 2100.0; //Cada prestação vale 1000, logo o financiamento valerá 90000 e não mais 100000
+		double newIncome = 2100.0; 
 		Financing fnn = new Financing(100000.0, 2000.0, 80); 
 		
 		fnn.setIncome(newIncome);
@@ -79,6 +79,31 @@ public class FinancingTests {
 			fnn.setIncome(newIncome);
 
 		});
+	}
+
+
+	@Test
+	public void setMonthsShouldUpdateDataWhenValidateData() {
+		int newMonths = 81;
+		Financing fnn = new Financing(100000.0, 2000.0, 80); 
+		
+		fnn.setMonths(newMonths);
+
+		Assertions.assertEquals(newMonths, fnn.getMonths());
+		
+		
+	}
+	
+	@Test
+	public void setMonthsShouldThrowExceptionWhenValidateData() {
+		
+		Assertions.assertThrows(IllegalArgumentException.class, () -> {
+			
+			Financing fnn = new Financing(100000.0, 2000.0, 20);
+
+		});
+		
+		
 	}
 	
 	
