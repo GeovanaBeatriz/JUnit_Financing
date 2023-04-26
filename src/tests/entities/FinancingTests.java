@@ -117,6 +117,14 @@ public class FinancingTests {
 	}
 	
 	
-	
+	@Test
+	public void quotaShouldCalculateValueCorrecly() {
+		double expectedValue = 1000.0;
+		Financing fnn = new Financing(100000.0, 2000.0, 80); 
+		
+		fnn.quota();
+		
+		Assertions.assertTrue(expectedValue == fnn.quota());
+	}
 	
 }
