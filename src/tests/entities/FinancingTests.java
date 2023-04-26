@@ -106,5 +106,17 @@ public class FinancingTests {
 		
 	}
 	
+	@Test
+	public void entryShouldCalculateValueCorrecly() {
+		double expectedValue = 20000.0;
+		Financing fnn = new Financing(100000.0, 2000.0, 80); 
+		
+		fnn.entry();
+		
+		Assertions.assertTrue(expectedValue == fnn.entry());
+	}
+	
+	
+	
 	
 }
